@@ -532,7 +532,7 @@ a {
   }
 }
 
-/* Collapsibles */ 
+/* Collapsibles */
 .collapsible__header {
   display: flex;
   justify-content: space-between;
@@ -552,7 +552,9 @@ a {
   max-height: 0;
   opacity: 0;
   overflow: hidden;
-  transition: max-height 0.3s, opacity 0.3s;
+  transition:
+    max-height 0.35s,
+    opacity 0.35s;
 }
 
 .collapsible--expanded .collapsible__chevron {
@@ -600,4 +602,64 @@ a {
 .container {
   max-width: 1140px;
   margin: 0 auto;
+}
+
+/* Navigation Bar */
+.nav {
+  align-items: center;
+  background: #000;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 0 1rem;
+}
+
+.nav__list {
+  margin: 0;
+  width: 100%;
+}
+
+.nav__item {
+  border-bottom: 1px solid #222;
+  padding: 0.5rem 2rem;
+}
+
+.nav__item > a {
+  color: #d2d0db;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.nav__item > a:hover {
+  color: #fff;
+}
+
+.nav__toggler {
+  cursor: pointer;
+  opacity: 0.5;
+  transition: box-shadow 0.15s;
+}
+
+.nav.collapsible--expanded .nav__toggler {
+  border-radius: 5px;
+  box-shadow: 0 0 0 3px #666;
+  opacity: 1;
+}
+
+@media screen and (min-width: 768px) {
+  .nav__toggler {
+    display: none;
+  }
+
+  .nav__list {
+    display: flex;
+    font-size: 1.6rem;
+    max-height: none;
+    opacity: 1;
+    width: auto;
+  }
+
+  .nav__item {
+    border: none;
+  }
 }
