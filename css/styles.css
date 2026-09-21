@@ -646,6 +646,10 @@ a {
   opacity: 1;
 }
 
+.nav__brand {
+  transform: translateY(5px);
+}
+
 @media screen and (min-width: 768px) {
   .nav__toggler {
     display: none;
